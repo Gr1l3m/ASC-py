@@ -7,7 +7,7 @@ def body_surface(mass:int):
     print(f"{result1=} {result2=}")
     return result1 / result2
 
-def mosteller(mass:int, height:int):
+def body_surface_mosteller(mass:int, height:int):
     return sqrt((height*mass)/3600)
 
 def imc(mass:int, height:int):
@@ -21,3 +21,22 @@ def deficit_millilitres(weight:int, dehydration:int):
 
 # def unsensible_losses(loss_in_millilitres):
 #     if loss_in_millilitres
+
+def return_centimetres(height: int | float):
+    if type(height) is int:
+        if height > 30:
+            return height
+        elif height < 3:
+            return height * 100
+        else:
+            return False
+    elif type(height) is float:
+        if height < 3:
+            return int(height * 100)
+        elif height < 300:
+            return int(height)
+        else:
+            return False
+    else:
+        return False
+
